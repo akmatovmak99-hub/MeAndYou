@@ -2,12 +2,16 @@ package demoQa.ui.page;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverConditions;
+import demoQa.ui.helper.ElementAction;
+import demoQa.ui.page.elements.TextBoxPage;
 import io.qameta.allure.Step;
 
 //<T> это generic (generic = )
 public abstract class BasePage<T extends BasePage<T>> {
 
     protected abstract String getPath();
+
+    protected ElementAction elementAction = new ElementAction();
 
     @Step("Открывает страницу")
     public T openPage() {
